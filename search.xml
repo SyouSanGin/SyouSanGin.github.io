@@ -3,14 +3,10 @@
   <entry>
     <title>Digital Circuit Mod 项目启动</title>
     <url>/2022/04/29/digital-circuit-begin/</url>
-    <content><![CDATA[<h1>Aim</h1>
-<p>部分实现 <strong>Red Project Mod</strong>的功能，同时添加原mod中缺少的Bus功能等，以实现Red Project 的高版本代替mod。<br>
-本mod不计划添加合成表并且仅在创造模式下使用。<br>
-目前没有计划考虑多人游戏的适配性</p>
-<h1>Details</h1>
-<p>计划实现的功能有：</p>
+    <content><![CDATA[<h1 id="Aim"><a href="#Aim" class="headerlink" title="Aim"></a>Aim</h1><p>部分实现 <strong>Red Project Mod</strong>的功能，同时添加原mod中缺少的Bus功能等，以实现Red Project 的高版本代替mod。<br>本mod不计划添加合成表并且仅在创造模式下使用。<br>目前没有计划考虑多人游戏的适配性</p>
+<h1 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h1><p>计划实现的功能有：</p>
 <ul>
-<li><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">基本逻辑门（支持1～32位数据，可在游戏内修改）</label></li>
+<li><input checked="" disabled="" type="checkbox"> 基本逻辑门（支持1～32位数据，可在游戏内修改）</li>
 <li>[] 数据传输线路。此线路将独立于游戏的红石机制。线的数据宽度固定为32位，根据不同用途使用不同位。</li>
 <li>[] Mod 内部数据与红石数据的转换模块。</li>
 <li>[] 多路复用器Mux</li>
@@ -19,11 +15,8 @@
 <li>[] 数据位分解与扩充模块</li>
 <li>[] 移位器</li>
 </ul>
-<h1>Supported Game Version</h1>
-<p>Minecraft 1.18.1 Forge<br>
-Java Runtime Environment 17+</p>
-<h1>Help</h1>
-<p>如果你对此项目感到兴趣，欢迎与我取得联系。具体联系方式见About页面。如果你有类似Mod的开发经验就再好不过了！！！Thx！</p>
+<h1 id="Supported-Game-Version"><a href="#Supported-Game-Version" class="headerlink" title="Supported Game Version"></a>Supported Game Version</h1><p>Minecraft 1.18.1 Forge<br>Java Runtime Environment 17+</p>
+<h1 id="Help"><a href="#Help" class="headerlink" title="Help"></a>Help</h1><p>如果你对此项目感到兴趣，欢迎与我取得联系。具体联系方式见About页面。如果你有类似Mod的开发经验就再好不过了！！！Thx！</p>
 ]]></content>
       <categories>
         <category>mc</category>

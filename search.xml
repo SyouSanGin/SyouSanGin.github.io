@@ -6,6 +6,7 @@
     <content><![CDATA[<h1 id="Aim"><a href="#Aim" class="headerlink" title="Aim"></a>Aim</h1><p>部分实现 <strong>Red Project Mod</strong>的功能，同时添加原mod中缺少的Bus功能等，以实现Red Project 的高版本代替mod。<br>本mod不计划添加合成表并且仅在创造模式下使用。<br>目前没有计划考虑多人游戏的适配性</p>
 <h1 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h1><p>计划实现的功能有：</p>
 <ul>
+<li><input checked="" disabled="" type="checkbox"> 独立的创造模式物品栏</li>
 <li><input checked="" disabled="" type="checkbox"> 基本逻辑门（支持1～32位数据，可在游戏内修改）</li>
 <li>[] 数据传输线路。此线路将独立于游戏的红石机制。线的数据宽度固定为32位，根据不同用途使用不同位。</li>
 <li>[] Mod 内部数据与红石数据的转换模块。</li>
@@ -25,5 +26,10 @@
         <tag>mc</tag>
         <tag>java</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>log-2022-4-30</title>
+    <url>/2022/04/30/log-2022-4-30/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>

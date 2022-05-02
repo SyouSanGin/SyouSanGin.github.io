@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>开发记录 2022-4-30</title>
+    <url>/2022/04/30/log-2022-4-30/</url>
+    <content><![CDATA[<h1 id="Finished"><a href="#Finished" class="headerlink" title="Finished"></a>Finished</h1><ul>
+<li>添加创造模式物品栏</li>
+<li>添加物品Mascot（主要为了给Tab提供图标）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>mc</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>mc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Digital Circuit Mod 项目启动</title>
     <url>/2022/04/29/digital-circuit-begin/</url>
     <content><![CDATA[<h1 id="Aim"><a href="#Aim" class="headerlink" title="Aim"></a>Aim</h1><p>部分实现 <strong>Red Project Mod</strong>的功能，同时添加原mod中缺少的Bus功能等，以实现Red Project 的高版本代替mod。<br>本mod不计划添加合成表并且仅在创造模式下使用。<br>目前没有计划考虑多人游戏的适配性</p>
@@ -23,24 +39,8 @@
         <category>mc</category>
       </categories>
       <tags>
-        <tag>mc</tag>
         <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>开发记录 2022-4-30</title>
-    <url>/2022/04/30/log-2022-4-30/</url>
-    <content><![CDATA[<h1 id="Finished"><a href="#Finished" class="headerlink" title="Finished"></a>Finished</h1><ul>
-<li>添加创造模式物品栏</li>
-<li>添加物品Mascot（主要为了给Tab提供图标）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>mc</category>
-      </categories>
-      <tags>
         <tag>mc</tag>
-        <tag>java</tag>
       </tags>
   </entry>
 </search>

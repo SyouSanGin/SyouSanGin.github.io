@@ -28,8 +28,19 @@
       </tags>
   </entry>
   <entry>
-    <title>log-2022-4-30</title>
+    <title>开发记录 2022-4-30</title>
     <url>/2022/04/30/log-2022-4-30/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h1 id="Finished"><a href="#Finished" class="headerlink" title="Finished"></a>Finished</h1><ul>
+<li>添加创造模式物品栏</li>
+<li>添加物品Mascot（主要为了给Tab提供图标）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>mc</category>
+      </categories>
+      <tags>
+        <tag>mc</tag>
+        <tag>java</tag>
+      </tags>
   </entry>
 </search>

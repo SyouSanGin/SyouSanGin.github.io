@@ -233,7 +233,7 @@ A^TA =
 <h2 id="2-3作业题中的性质"><a href="#2-3作业题中的性质" class="headerlink" title="2.3作业题中的性质"></a>2.3作业题中的性质</h2><ul>
 <li>可逆方阵都是初等方阵的乘积</li>
 <li>初等方阵都可以表示为<script type="math/tex">I+\alpha \beta^T</script>的形式，其中后面时两个列向量。</li>
-<li>列向量<script type="math/tex">\alpha,\beta</script>做如下变化:<script type="math/tex">P := I + \alpha \beta^T</script>称为其<strong>平延</strong>，且对于任意两个不平行的向量总存在一个平延使得两个向量在平延的变换下相等。（等价变形后直接取<script type="math/tex">\alpha = v-u</script>然后证可以取得<code>$\beta \ s.t. \beta^T \alpha = 0（人为要求使得两个不共线）, \beta^Tu = 1</code>）</li>
+<li>列向量<script type="math/tex">\alpha,\beta</script>做如下变化:<script type="math/tex">P := I + \alpha \beta^T</script>称为其<strong>平延</strong>，且对于任意两个不平行的向量总存在一个平延使得两个向量在平延的变换下相等。（等价变形后直接取<script type="math/tex">\alpha = v-u</script>然后证可以取得<script type="math/tex">\beta \ s.t. \beta^T \alpha = 0（人为要求使得两个不共线）, \beta^Tu = 1</script>）</li>
 </ul>
 ]]></content>
       <categories>

@@ -194,4 +194,54 @@ A^TA =
         <tag>math</tag>
       </tags>
   </entry>
+  <entry>
+    <title>线性代数复习记录-22-5-3</title>
+    <url>/2022/05/03/Math/LA/la-review-22-5-3/</url>
+    <content><![CDATA[<h1 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h1><h2 id="张量积——2阶矩阵方程与线性方程的互化"><a href="#张量积——2阶矩阵方程与线性方程的互化" class="headerlink" title="张量积——2阶矩阵方程与线性方程的互化"></a>张量积——2阶矩阵方程与线性方程的互化</h2><p>A,B,X,Y都是二阶方阵，则矩阵方程<script type="math/tex">AXB=Y</script>可以化为<script type="math/tex">Qx=y</script>的形式。其中</p>
+<script type="math/tex; mode=display">
+    Q = A\otimes B^T\\
+    x= \begin{pmatrix}
+        x_{11} \\
+        x_{12}\\
+        x_{21}\\
+        x_{22}
+    \end{pmatrix}
+    \\
+    y= \begin{pmatrix}
+        y_{11} \\
+        y_{12}\\
+        y_{21}\\
+        y_{22}
+    \end{pmatrix}</script><p>如果把A、B其中一个换成I，则相当于说原来的式子可以总表述为一个列向量经过一个变换等于另外的一个列向量。</p>
+<p><strong>合理拓展</strong><br>如果A是m阶方阵，B是n阶方阵，X、Y都表示m * n阶方阵，x、y表示X、Y的列向量展开拼接成的mn维列向量。则矩阵方程AXB=Y总可以表达为Mx=y的形式。其中M满足:</p>
+<script type="math/tex; mode=display">
+    M = B^T\otimes A</script><p><strong>上述推导可以得出的其他结论</strong></p>
+<ul>
+<li><script type="math/tex; mode=display">A\otimes B = (A \otimes I)(I \otimes B) = (I \otimes B)(A \otimes I)</script></li>
+<li>Y = AX-XB可以化为<script type="math/tex">y = (I_n \otimes A - B^T \otimes I_m)x</script></li>
+</ul>
+<h2 id="交换方阵的等价表述"><a href="#交换方阵的等价表述" class="headerlink" title="交换方阵的等价表述"></a>交换方阵的等价表述</h2><script type="math/tex; mode=display">
+    S_{ij} = D_i(-1)T_{ij}(-1)T_{ji}(1)T_{ij}(-1)</script><p>过程：</p>
+<ul>
+<li>第i行ri  第j行rj</li>
+<li>第i行ri-rj  第j行rj</li>
+<li>第i行ri-rj  第j行ri</li>
+<li>第i行-rj  第j行ri</li>
+<li>第i行rj  第j行ri</li>
+</ul>
+<h2 id="证明通过变换化为标准型"><a href="#证明通过变换化为标准型" class="headerlink" title="证明通过变换化为标准型"></a>证明通过变换化为标准型</h2><p>对行数进行归纳。m=1是用一个打成0，<script type="math/tex">m \le 2</script>时先把第一行打成0，然后把第一列打成0，对右下角的小矩阵归纳。</p>
+<h2 id="2-3作业题中的性质"><a href="#2-3作业题中的性质" class="headerlink" title="2.3作业题中的性质"></a>2.3作业题中的性质</h2><ul>
+<li>可逆方阵都是初等方阵的乘积</li>
+<li>初等方阵都可以表示为<script type="math/tex">I+\alpha \beta^T</script>的形式，其中后面时两个列向量。</li>
+<li>列向量<script type="math/tex">\alpha,\beta</script>做如下变化:<script type="math/tex">P := I + \alpha \beta^T</script>称为其<strong>平延</strong>，且对于任意两个不平行的向量总存在一个平延使得两个向量在平延的变换下相等。（等价变形后直接取<script type="math/tex">\alpha = v-u</script>然后证可以取得<code>$\beta \ s.t. \beta^T \alpha = 0（人为要求使得两个不共线）, \beta^Tu = 1</code>）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>math</category>
+        <category>la</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
+      </tags>
+  </entry>
 </search>

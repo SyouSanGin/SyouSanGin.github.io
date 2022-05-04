@@ -1,0 +1,114 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>线性代数复习记录-22-5-4 | SyouSanGin</title><script>var config = {"hostname":"https://syousangin.github.io","root":"/","preload":false,"path":""}</script><script src="//unpkg.com/mermaid@8.13.5/dist/mermaid.min.js"></script><script>mermaid.initialize({
+  startOnLoad: false
+  , theme: 'dark'
+});</script><script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.1/MathJax.js"></script><script>MathJax.Hub.Config({
+  menuSettings: {
+    zoom: "None"
+  },
+  showMathMenu: false,
+  jax: ["input/TeX","output/CommonHTML"],
+  extensions: ["tex2jax.js"],
+  TeX: {
+    extensions: ["AMSmath.js","AMSsymbols.js"],
+    equationNumbers: {
+      autoNumber: "AMS"
+    }
+  },
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]]
+  }
+});</script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.1.0"></head><body style="background-image:url(/img/bkg.png);"><div id="cursor-container"><div id="cursor-outer"></div><div id="cursor-effect"></div></div><main><header><nav><div class="navBtn"><i class="navBtnIcon"><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span><span class="navBtnIconBar"></span></i></div><ol class="navContent"><li class="navItem search-header"><input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="数据检索" spellcheck="false" maxlength="50" type="text" id="search-input"></li><li class="navItem"><a href="/"><span class="navItemTitle">Home</span></a></li><li class="navItem"><a href="/archives/"><span class="navItemTitle">Archives</span></a></li><li class="navItem"><a href="/about/"><span class="navItemTitle">About</span></a></li><li class="navItem"><a href="/friends/"><span class="navItemTitle">Friends</span></a></li></ol></nav><div class="search-popup"><div id="search-result"></div></div></header><article><div id="post-bg"><div id="post-title"><h1>线性代数复习记录-22-5-4</h1><div id="post-info"><span>First Post:<span class="control"><time datetime="2022-05-04T11:03:02.000Z" id="date"> 2022-05-04</time></span></span><br><span>Last Update:<span class="control"><time datetime="2022-05-04T14:47:40.746Z" id="updated"> 2022-05-04</time></span></span><br><span>Word Count:<span class="control">&nbsp;1.4k</span></span><br><span>Read Time:<span class="control">&nbsp;5min</span></span></div></div><hr><div id="post-content"><h1 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h1><h2 id="换位矩阵的表述为换位子"><a href="#换位矩阵的表述为换位子" class="headerlink" title="换位矩阵的表述为换位子"></a>换位矩阵的表述为换位子</h2><script type="math/tex; mode=display">
+    T_{ij}(\lambda) = T_{ik}(\lambda)T_{kj}(1)T_{ik}(-\lambda)T_{kj}(-1)</script><p>过程：</p>
+<ul>
+<li>row i : r_i row j : r_j row k : r_k</li>
+<li>row i : r_i row j : r_j row k : r_k - r_j</li>
+<li>row i : r_i - a r_k + a r_j row j : r_j row k : r_k - r_j</li>
+<li>row i : r_i - a r_k + a r_j row j : r_j row k : r_k </li>
+<li>row i : r_i + a r_j row j : r_j row k : r_k</li>
+</ul>
+<h2 id="可逆矩阵"><a href="#可逆矩阵" class="headerlink" title="可逆矩阵"></a>可逆矩阵</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>左逆右逆存在，则为可逆，且左逆右逆相等</p>
+<h3 id="矩阵M左逆右逆存在的条件"><a href="#矩阵M左逆右逆存在的条件" class="headerlink" title="矩阵M左逆右逆存在的条件"></a>矩阵M左逆右逆存在的条件</h3><p>有左逆等价于<strong>M列满秩</strong>，有右逆相当于<strong>M行满秩</strong>。综合两者得到存在逆矩阵等价于<strong>行列都满秩</strong><br>选择存在右逆的情况来证明<br>必要性<br>行满秩则有</p>
+<script type="math/tex; mode=display">
+    M = (I_r \ 0)Q</script><p>其中Q为可逆矩阵。取右逆为<script type="math/tex">Q^{-1}\begin{pmatrix} I_r \\ 0 \end{pmatrix}</script>即可<br>充分性<br>有右逆，则存在N使得<script type="math/tex">MN = I = P \begin{pmatrix}I_r & O \\ O & O\end{pmatrix}Q</script><br>反证法，不妨设其标准型为</p>
+<script type="math/tex; mode=display">
+    \begin{pmatrix}
+        I_r &O \\ O& O
+    \end{pmatrix}</script><p>且在左乘P、右乘Q的情况下化为M。设<script type="math/tex">QN = \begin{pmatrix}Q_1 & Q_2 \\ Q_3 &Q_4\end{pmatrix}</script>。则可以得到</p>
+<script type="math/tex; mode=display">
+    \begin{pmatrix}
+        Q_1 & Q_2 \\ O & O
+    \end{pmatrix}
+    =
+    P^{-1}</script><p>者显然是矛盾的<br>Q.E.D.~</p>
+<h3 id="可逆的等价条件"><a href="#可逆的等价条件" class="headerlink" title="可逆的等价条件"></a>可逆的等价条件</h3><ul>
+<li>矩阵方程AX=I有唯一解（只有唯一的右逆/左逆）</li>
+<li>Ax = b 有唯一的解x （如果有解u、w，则有v = u-w满足Av=0，则在已有右逆B的情况下B+(v O)也构成其右逆，矛盾）</li>
+<li>Ax = 0 只有0解</li>
+</ul>
+<h2 id="两个特殊的矩阵的幂次"><a href="#两个特殊的矩阵的幂次" class="headerlink" title="两个特殊的矩阵的幂次"></a>两个特殊的矩阵的幂次</h2><h3 id="“偏心的”单位阵"><a href="#“偏心的”单位阵" class="headerlink" title="“偏心的”单位阵"></a>“偏心的”单位阵</h3><script type="math/tex; mode=display">
+    \begin{pmatrix}
+        0 &1\\
+        &\ddots&\ddots\\
+        &&0&1\\
+        &&&0
+    \end{pmatrix}^k=
+    \begin{bmatrix}  
+  0_1 & 0_2 & 1 & 0 \\  
+  0 & 0 & \cdots & 1 \\  
+  \vdots & \vdots & \ddots & 0 \\  
+  0 & 0 & \cdots & 0  
+\end{bmatrix}</script><p>几次方把1往右上角推几次，推的多了就是0了</p>
+<h3 id="上述单位阵加上一个纯量阵"><a href="#上述单位阵加上一个纯量阵" class="headerlink" title="上述单位阵加上一个纯量阵"></a>上述单位阵加上一个纯量阵</h3><script type="math/tex; mode=display">
+    \begin{pmatrix}
+        q&1&&\\
+        &\ddots&\ddots&\\
+        &&q&1\\
+        &&&q&
+    \end{pmatrix}^k 
+    = \begin{pmatrix}
+        C^k_kq^k & \cdots C^0_kq^0\\\\
+        &\ddots&&\ddots \\
+        \\
+        &&C^k_kq^k & \cdots & C^0_kq^k\\ 
+        \\
+        &&&\ddots\\
+        &&&&C^k_kq^k
+    \end{pmatrix}</script><p>如果次方数比n大，则一直按照二项展开的系数把矩阵写满就不写了即可</p>
+<h2 id="Schur"><a href="#Schur" class="headerlink" title="Schur"></a>Schur</h2><p>已知<script type="math/tex">A = \begin{pmatrix}A_1 & A_2 \\ A_3 & A_4 \end{pmatrix}</script>,则如果左上角可逆，则</p>
+<script type="math/tex; mode=display">
+    A = \begin{pmatrix}
+        I&O\\
+        A_3A_1^{-1} &I
+    \end{pmatrix}
+    \begin{pmatrix}
+        A_1 &O \\
+        O & A_4 - A_3A_1^{-1}A_2
+    \end{pmatrix}
+    \begin{pmatrix}
+        I & A_1^{-1}A_2 \\
+        O & I
+    \end{pmatrix}</script><p>其逆矩阵表述可以通过（1）对准对角阵逆矩阵为对每个元素取逆（2）头尾矩阵取逆等于对副对角线的元素取相反矩阵 计算得到<br>如果<script type="math/tex">A_4</script>可逆，则可以类似徳表述，不过下面的形式会变为原来左右矩阵取个转置后再换成对应元素的形式。</p>
+<h2 id="作业题的结论"><a href="#作业题的结论" class="headerlink" title="作业题的结论"></a>作业题的结论</h2><h3 id="Jacobi恒等式"><a href="#Jacobi恒等式" class="headerlink" title="Jacobi恒等式"></a>Jacobi恒等式</h3><script type="math/tex; mode=display">
+    \sum\limits_{cyc}(a\times b)\times c = 0</script><h3 id="习题2-4-6的衍生结论"><a href="#习题2-4-6的衍生结论" class="headerlink" title="习题2.4.6的衍生结论"></a>习题2.4.6的衍生结论</h3><p>如果两个矩阵可以表示为同一个矩阵的多项式，则两个矩阵是可交换的<br>如果<script type="math/tex">A^k = \lambda I \qquad \lambda \ne 1</script>,则I-A可逆，逆矩阵为：</p>
+<script type="math/tex; mode=display">
+    \frac{1}{1-\lambda}(I + A + A^2 + \cdots + A^{k-1})</script><p><strong>习题2.4.6和习题2.4.7带来的启示</strong>：如果需要证明一个矩阵是不是可逆并且给出了对应的逆的表达式，则可以利用左乘右乘证明左逆右逆存在来证明这个矩阵是可逆的（上面说过左逆右逆的存在性于矩阵的rank之间的关系）。证明“当且仅当”，“当”可以通过带入，“仅当”则证明在给定不成立的条件下的的确确不成立即可。</p>
+<h3 id="张量积与逆"><a href="#张量积与逆" class="headerlink" title="张量积与逆"></a>张量积与逆</h3><script type="math/tex; mode=display">
+    (A\otimes B)^{-1} = A^{-1}\otimes B^{-1}</script><h3 id="SMW公式（太TM长了）"><a href="#SMW公式（太TM长了）" class="headerlink" title="SMW公式（太TM长了）"></a>SMW公式（太TM长了）</h3><p>A是m阶可逆方阵，B是m*n，C是n*m，则A+BC可逆当且仅当<script type="math/tex">I+CA^{-1}B</script>可逆，且</p>
+<script type="math/tex; mode=display">
+    (A+BC)^{-1} = A^{-1} - A^{-1}B(I + CA^{-1}B)^{-1}CA^{-1}</script><p>证明方法：利用乘以逆矩阵可逆且利用后面的结论（det（xI-AB）的结论）可以证明。</p>
+<h3 id="习题2-4-11"><a href="#习题2-4-11" class="headerlink" title="习题2.4.11"></a>习题2.4.11</h3><p>涉及到可微函数构成的矩阵的逆矩阵的倒数时，可以羡考虑其与原矩阵的乘积是单位矩阵，单位矩阵的导数为0</p>
+<h1 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h1><h2 id="行列式的特殊展开技巧♂"><a href="#行列式的特殊展开技巧♂" class="headerlink" title="行列式的特殊展开技巧♂"></a>行列式的特殊展开技巧♂</h2><script type="math/tex; mode=display">
+    \det(\sum a_{1j}e_j , \cdots ,\sum a_{nj}e_j) = \sum\limits_{(j_1,\cdots j_n)\in S_n}a_{1j_1}\cdots a_{nj_n} \det{(e_{1j_1},\cdots , e_{nj_n}  )}</script><p>上述式子中本来可能出现有重复的e构成的行列式，但是这样的行列式在通过多重线性展开后并且由反对称性直接被干成了0，因而这里可以不考虑了</p>
+<h2 id="准上三角的行列式"><a href="#准上三角的行列式" class="headerlink" title="准上三角的行列式"></a>准上三角的行列式</h2><p>A是准上三角阵，其中对角元为<script type="math/tex">A_1\cdots A_n</script>，则A的行列式可以表述为</p>
+<script type="math/tex; mode=display">
+    \det A = \prod_i \det (A_i)</script><p>证明方法：先证明2*2的分块，然后对多分块的矩阵从大到小二分法即可</p>
+<h2 id="计算所有项为一个特殊的det但是多了-少了一项的det"><a href="#计算所有项为一个特殊的det但是多了-少了一项的det" class="headerlink" title="计算所有项为一个特殊的det但是多了/少了一项的det"></a>计算所有项为一个特殊的det但是多了/少了一项的det</h2><p>采用增补法。比如习题3.1.6.10采用了在上方补 1 -1 -1 -1 -1 在左侧补 0 0 0 0，再利用线性变换得到新的矩阵。新的矩阵可以有变换知道与原来的矩阵行列式相等。同时新的矩阵也可以拆分成一个类似范德蒙德矩阵的二倍以及一个把原来的-1换成1的矩阵的差。由于只有第一行有差距，因而是可以相加减的。分别计算每个的行列式即可。注意！范德蒙德矩阵可能其中一个变元取成了1，那么必然会出现全是1的一行。</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div id="footer-link" style="left: 50%;order: 0;border-left: 1px solid #fe2;padding-right: unset;max-width: calc(50% - 5px);"><a href="/2022/05/03/Math/LA/la-review-22-5-3/">线性代数复习记录-22-5-3 Prev →</a></div></div></div><details id="reward"><summary>打赏</summary><div id="alipay"><span>支付宝 | Alipay</span><br><img src="/img/Alipay.png"></div><div id="wechat"><span>微信 | WeChat</span><br><img src="/img/WeChat.png"></div></details></div><div id="bottom-btn"><a id="to-top" onClick="index.scrolltop();" title="to top" style="opacity: 0; display: none;">∧</a></div></article><div class="aside-box"><aside><div id="aside-top"><div id="about"><a href="/" id="logo"><img src="/img/logo.png" alt="Logo"></a><h1 id="Dr"><a href="/">SyouSanGin</a></h1><div id="description"><p>Record my life</p></div><!--if page.published === undefined--><section id="total"><a id="total-archives" href="/archives"><span class="total-title">Archives Total:</span><span class="total-number">5</span></a><div id="total-tags"><span class="total-title">Tags:</span><span class="total-number">3</span></div><div id="total-categories"><span class="total-title">Categories:</span><span class="total-number">3</span></div></section></div><div id="aside-block"><div id="toc-div"><h1>INDEX</h1><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97"><span class="toc-number">1.</span> <span class="toc-text">矩阵运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%A2%E4%BD%8D%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%A8%E8%BF%B0%E4%B8%BA%E6%8D%A2%E4%BD%8D%E5%AD%90"><span class="toc-number">1.1.</span> <span class="toc-text">换位矩阵的表述为换位子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E9%80%86%E7%9F%A9%E9%98%B5"><span class="toc-number">1.2.</span> <span class="toc-text">可逆矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5M%E5%B7%A6%E9%80%86%E5%8F%B3%E9%80%86%E5%AD%98%E5%9C%A8%E7%9A%84%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text">矩阵M左逆右逆存在的条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%80%86%E7%9A%84%E7%AD%89%E4%BB%B7%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.2.3.</span> <span class="toc-text">可逆的等价条件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84%E7%9F%A9%E9%98%B5%E7%9A%84%E5%B9%82%E6%AC%A1"><span class="toc-number">1.3.</span> <span class="toc-text">两个特殊的矩阵的幂次</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9C%E5%81%8F%E5%BF%83%E7%9A%84%E2%80%9D%E5%8D%95%E4%BD%8D%E9%98%B5"><span class="toc-number">1.3.1.</span> <span class="toc-text">“偏心的”单位阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E8%BF%B0%E5%8D%95%E4%BD%8D%E9%98%B5%E5%8A%A0%E4%B8%8A%E4%B8%80%E4%B8%AA%E7%BA%AF%E9%87%8F%E9%98%B5"><span class="toc-number">1.3.2.</span> <span class="toc-text">上述单位阵加上一个纯量阵</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Schur"><span class="toc-number">1.4.</span> <span class="toc-text">Schur</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E4%B8%9A%E9%A2%98%E7%9A%84%E7%BB%93%E8%AE%BA"><span class="toc-number">1.5.</span> <span class="toc-text">作业题的结论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Jacobi%E6%81%92%E7%AD%89%E5%BC%8F"><span class="toc-number">1.5.1.</span> <span class="toc-text">Jacobi恒等式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%982-4-6%E7%9A%84%E8%A1%8D%E7%94%9F%E7%BB%93%E8%AE%BA"><span class="toc-number">1.5.2.</span> <span class="toc-text">习题2.4.6的衍生结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF%E4%B8%8E%E9%80%86"><span class="toc-number">1.5.3.</span> <span class="toc-text">张量积与逆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SMW%E5%85%AC%E5%BC%8F%EF%BC%88%E5%A4%AATM%E9%95%BF%E4%BA%86%EF%BC%89"><span class="toc-number">1.5.4.</span> <span class="toc-text">SMW公式（太TM长了）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%A0%E9%A2%982-4-11"><span class="toc-number">1.5.5.</span> <span class="toc-text">习题2.4.11</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">行列式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E7%89%B9%E6%AE%8A%E5%B1%95%E5%BC%80%E6%8A%80%E5%B7%A7%E2%99%82"><span class="toc-number">2.1.</span> <span class="toc-text">行列式的特殊展开技巧♂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E4%B8%8A%E4%B8%89%E8%A7%92%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">准上三角的行列式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%89%80%E6%9C%89%E9%A1%B9%E4%B8%BA%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E7%9A%84det%E4%BD%86%E6%98%AF%E5%A4%9A%E4%BA%86-%E5%B0%91%E4%BA%86%E4%B8%80%E9%A1%B9%E7%9A%84det"><span class="toc-number">2.3.</span> <span class="toc-text">计算所有项为一个特殊的det但是多了&#x2F;少了一项的det</span></a></li></ol></li></ol></div></div></div><footer><nobr><span class="text-title">©</span><span class="text-content">2021 to 2022</span></nobr><br><nobr><span class="text-title">ICP</span><span class="text-content">NaN</span></nobr><br><text>published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></text><text> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight</a></text><wbr><text>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></text></footer></aside></div></main><canvas id="canvas-dust"></canvas><script src="/js/search.js"></script><script>const reset=_=>{mermaid.init(undefined, ('.mermaid'));}</script><script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script><script src="/js/arknights.js"></script><script>document.addEventListener("load",reset())</script></body></html>

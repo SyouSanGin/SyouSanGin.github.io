@@ -342,4 +342,87 @@ A^TA =
         <tag>math</tag>
       </tags>
   </entry>
+  <entry>
+    <title>线性代数复习记录-22-5-5</title>
+    <url>/2022/05/05/Math/LA/la-review-22-5-5/</url>
+    <content><![CDATA[<h1 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h1><h2 id="一个特殊的分解"><a href="#一个特殊的分解" class="headerlink" title="一个特殊的分解"></a>一个特殊的分解</h2><script type="math/tex; mode=display">
+   A =  \begin{pmatrix}
+        0&1&2&\cdots &n-1 \\
+        -1 & 0 &1 & \ddots & \vdots\\
+        -2 & -1 & 0&\ddots &2\\
+        \vdots & \ddots  & \ddots  & \ddots&1\\
+        1-n & \cdots &-2 & -1 & 0
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        1&-1\\
+        \vdots & \vdots \\
+        n & -1
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&\cdots & 1\\
+        1 & \cdots & n
+    \end{pmatrix}</script><p>如果把A按照通项表达则是<script type="math/tex">a_{ij} = (j - i)</script></p>
+<h2 id="对分块矩阵的交换"><a href="#对分块矩阵的交换" class="headerlink" title="对分块矩阵的交换"></a>对分块矩阵的交换</h2><p>考虑<script type="math/tex">A = (A \ B)</script>的分块，A有m列，B有n列，则需要把A、B交换位置则需要进行<strong>mn</strong>次的相邻对换</p>
+<h2 id="Binet-Cauchy"><a href="#Binet-Cauchy" class="headerlink" title="Binet-Cauchy"></a>Binet-Cauchy</h2><p>n阶方阵，总是有det（AB） = det（A）det（B）<br>如果AB不是方阵，但是乘积是个方阵，则这个乘积行列式有两种情况：</p>
+<ul>
+<li>如果A是瘦子，B是胖子，则det = 0</li>
+<li>如果A是胖子，B是瘦子，则<script type="math/tex; mode=display">
+  \det AB =\sum_{1\le i_1 \lt \cdots \lt i_m \le m} \det \left ( A \begin{bmatrix}
+      1&2&\cdots &m \\ i_1 & i_2 &\cdots & i_m
+  \end{bmatrix}  \right )
+  \det \left (
+  \begin{bmatrix}
+      i_1 & \cdots & i_m\\ 1&\cdots & m
+  \end{bmatrix}
+  \right )</script></li>
+</ul>
+<p><strong>Attention</strong> 这里的i是有大小顺序的，但是在一般的子矩阵中是没有对选取行列的顺序有要求的。<br>如果有三个矩阵相乘，不妨规格为mn、np、pm。想要矩阵又算头而不是一上来就是0，则有<script type="math/tex">k \le \min \{m,n\}</script>。增加一组组合选取，将中间的矩阵抽出组的的行于列，头尾两个矩阵依旧。<br><strong>Attention</strong> 存在左逆与右逆可以于rank的满性相等价起来，但是并不能与矩阵的形状等价起来，只能够推导出矩阵式胖的还是瘦的。</p>
+<p>Binet-Cauchy的证明思想：把B看作m个n维向量堆在一起，对其用A变换后得到新的每个行的表达式，把det看作对一堆向量的函数来操作。注意这里把det里面一堆求和打散的技巧。</p>
+<h2 id="Vandermonde"><a href="#Vandermonde" class="headerlink" title="Vandermonde"></a>Vandermonde</h2><p>其行列式注意是 <script type="math/tex">\prod_{i<j}(x_j - x_i)</script> 而不是 <script type="math/tex">\prod_{i<j}(x_i - x_j)</script><br>除了变换证明的方法，也可以把其视作某个元素的多项式，则在这时其他元素都是这个多项式的根，可以知道f（x）的表达式（因式乘积再乘最高项系数），再由于通过按一行展开可知最高相系数是小一阶的det，可以构成归纳。<br>求解Vandermonde的逆矩阵时注意可以把矩阵的逆右乘矩阵，然后前行后列变成一个多项式的结构，这个多项式可以由其取值确定下来（Lagrange）。具体见书P36</p>
+<h2 id="Cauchy方阵"><a href="#Cauchy方阵" class="headerlink" title="Cauchy方阵"></a>Cauchy方阵</h2><p><strong>把公式背住就不错了！！</strong><br>Cauchy方阵的定义为：</p>
+<script type="math/tex; mode=display">
+    c_{ij} = \frac{1}{s_i - t_j}</script><p>已知</p>
+<script type="math/tex; mode=display">
+    p(x) = \prod_i^n(x-t_i),q_j(x) = \frac{p(x)}{x-t_j} = \sum^n_k a_{kj}x^{k-1}</script><p>则C可以表示为</p>
+<script type="math/tex; mode=display">
+    C=diag\left(  \frac{1}{p(s_i)} \right)Van(s_i)Van^{-1}(t_j)diag[q_i(t_i)]</script><p>由此可知</p>
+<script type="math/tex; mode=display">
+    \det C = \prod_{i\lt j} (s_j - s_i)(t_i-t_j) \prod\frac{1}{s_i-t_j}</script><h2 id="循环方阵"><a href="#循环方阵" class="headerlink" title="循环方阵"></a>循环方阵</h2><p>先考虑轮换方阵：</p>
+<script type="math/tex; mode=display">
+    Z = \begin{pmatrix}
+        & I_{n-1} \\ 1
+    \end{pmatrix}</script><p>与复数方阵（这是一个复数的Vandermonde方阵）</p>
+<script type="math/tex; mode=display">
+    \Omega = (\omega^{(i-1)(j-1)})</script><p>其中<script type="math/tex">\omega</script>是n次单位根。<br>由于<script type="math/tex">\Omega \overline{\Omega} = nI</script>（单位根的性质：<script type="math/tex">\sum^{n-1}_{k = 0} \omega_i = 0</script>），可以知道其可逆。而</p>
+<script type="math/tex; mode=display">
+    Z\Omega = \Omega diag(1,w_1,\cdots ,\omega _{n-1})</script><p>可以把Z相似对角化为</p>
+<script type="math/tex; mode=display">
+    Z = \Omega diag(1,\cdots,\omega^{n-1})\Omega^{-1}</script><p><strong>上述结论值得记忆！如何相似对角化一个轮换方阵！</strong><br>同时对于复数循环方阵可以由<script type="math/tex">f(x) = \sum^{n-1}{i=0} c_it^i</script>与Z生成，因而可以很方便的计算det（C）</p>
+<script type="math/tex; mode=display">
+    \det C = \prod_{i=0}^{ n-1} f(\omega^i)</script><h2 id="例题3-11-结论"><a href="#例题3-11-结论" class="headerlink" title="例题3.11 结论"></a>例题3.11 结论</h2><p>当<script type="math/tex">A_1A_3 = A_3A_1</script>时，则</p>
+<script type="math/tex; mode=display">
+    \det \begin{pmatrix}
+        A_1 & A_2 \\ A_3 &A_4
+    \end{pmatrix}
+    = 
+    \det(A_1A_4 - A_3A_2)</script><h2 id="例题3-12结论"><a href="#例题3-12结论" class="headerlink" title="例题3.12结论"></a>例题3.12结论</h2><p><strong>这个是非常非常重要的！！！！</strong><br>A是mn矩阵，B是nm矩阵，则</p>
+<script type="math/tex; mode=display">
+    \det (xI - AB) = x^{m-n} \det (xI - BA)</script><p>上式无论mn大小均是成立的</p>
+<h2 id="作业题的启示"><a href="#作业题的启示" class="headerlink" title="作业题的启示"></a>作业题的启示</h2><h3 id="3-2-3-带三角的行列式"><a href="#3-2-3-带三角的行列式" class="headerlink" title="3.2.3 带三角的行列式"></a>3.2.3 带三角的行列式</h3><ul>
+<li><script type="math/tex; mode=display">cos nx$$总是可以写成cos x的n次多项式，且首项系数为$$2^{n-1}$$.cos nx具有恒等式：$$\cos nx = 2 \cos x \cos (n- 1)x - \cos (n-2)x</script></li>
+<li>等差角公式</li>
+<li><script type="math/tex">\frac{\sin nx}{\sin x}</script>可以写成有关cosx的n-1次多项式</li>
+<li><strong>注意！</strong> 元素为多项式意味着在det中在某些情况下（比如只做列变换）只需要保留最高次即可，因为低次项可能由于det的多重线性展开后被前面的地磁项干碎了</li>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>math</category>
+        <category>la</category>
+      </categories>
+      <tags>
+        <tag>math</tag>
+      </tags>
+  </entry>
 </search>
